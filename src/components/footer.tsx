@@ -10,7 +10,7 @@ import { Input } from "./ui/input";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white p-8">
+    <footer className="bg-black text-white p-28 pb-7">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
         {/* Exclusive - Subscribe */}
         <div>
