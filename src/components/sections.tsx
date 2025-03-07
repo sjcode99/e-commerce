@@ -13,6 +13,7 @@ import { Card } from "./ui/card";
 import { useEffect, useState } from "react";
 import SectionHeading from "./section-heading";
 import SectionSubHeading from "./section-subheading";
+import CustomButton from "./Button";
 
 const products = [
   {
@@ -115,9 +116,11 @@ export default function Sections({
             </div>
           ) : (
             <div className="absolute right-2">
-              <Button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">
+              {/* <Button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">
                 View All
-              </Button>
+              </Button> */}
+              <CustomButton text="View All" bgColor={true} size="small" />
+
             </div>
           )}
         </div>
@@ -158,9 +161,10 @@ export default function Sections({
       {/* View All Button */}
       {(heading === "sale" || heading === "products") && (
         <div className="text-center mt-6">
-          <Button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">
+          {/* <Button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">
             View All Products
-          </Button>
+          </Button> */}
+          <CustomButton text="View All Products" bgColor={true} size="small" />
         </div>
       )}
     </section>

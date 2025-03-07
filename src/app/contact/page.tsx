@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone } from "lucide-react";
+import CustomButton from "@/components/Button";
 
 export default function Contact() {
   return (
@@ -68,9 +69,10 @@ export default function Contact() {
             placeholder="Your Message"
             className="p-5 bg-[#F5F5F5] rounded-sm h-36"
           />
-          <Button className="mt-4 bg-[#DB4444] hover:[#DB4444] w-full sm:w-auto pt-6 pb-6 pr-12 pl-12">
+          {/* <Button className="mt-4 bg-[#DB4444] hover:[#DB4444] w-full sm:w-auto pt-6 pb-6 pr-12 pl-12">
             Send Message
-          </Button>
+          </Button> */}
+          <CustomButton text="Send Message" bgColor={true} size="small"/>
         </div>
       </div>
     </div>
