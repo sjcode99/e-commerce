@@ -1,31 +1,41 @@
+"use client";
 import CustomButton from "@/components/Button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import useCartStore from "@/store/cartStore";
+import { ProductsType } from "@/types/productType";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
 
 export default function Cart() {
-  const cartItems = [
-    {
-      id: 1,
-      name: "LCD Monitor",
-      price: 650,
-      quantity: 1,
-      image: "/monitor.png",
-    },
-    {
-      id: 2,
-      name: "H1 Gamepad",
-      price: 550,
-      quantity: 2,
-      image: "/gamepad.png",
-    },
-  ];
+  // const cartItems = [
+  //   {
+  //     id: 1,
+  //     name: "LCD Monitor",
+  //     price: 650,
+  //     quantity: 1,
+  //     image: "/monitor.png",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "H1 Gamepad",
+  //     price: 550,
+  //     quantity: 2,
+  //     image: "/gamepad.png",
+  //   },
+  // ];
+  const { cart, updateQuantity } = useCartStore();
+
+  // calculate subtotal
+  const subTotal = cart.reduce((acc, item) => acc + (item.price* (item?.quantity || 1)), 0);
+
+  console.log(cart);
+
   return (
     <div className="container mx-auto px-4 py-12">
       <nav className="text-gray-500 mb-4">
         <span className="text-sm">
-          Home / <span className="font-medium">Cart</span>
+          Home / <span className="font-semibold text-black">Cart</span>
         </span>
       </nav>
 
@@ -41,36 +51,43 @@ export default function Cart() {
             </tr>
           </thead>
           <tbody>
-            {cartItems.map((item) => (
+            {cart.map((item: ProductsType) => (
               <tr key={item.id} className="border-t">
                 <td className="p-4 flex items-center space-x-3">
                   <Button variant="ghost" size="icon" className="text-red-500">
                     <Trash2 size={16} />
                   </Button>
-                  <Image
+                  {/* <Image
                     src={item.image}
-                    alt={item.name}
+                    alt={item.title}
                     width={50}
                     height={50}
                     className="rounded"
-                  />
-                  <span>{item.name}</span>
+                  /> */}
+                  <span>{item.title}</span>
                 </td>
                 <td className="p-4">${item.price}</td>
                 <td className="p-4">
-                  <select className="border rounded px-2 py-1">
+                  <select
+                    className="border rounded px-2 py-1"
+                    value={item.quantity}
+                    onChange={(e) =>
+                      updateQuantity(item.id, parseInt(e.target.value))
+                    }
+                  >
                     {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
                       <option
                         key={num}
                         value={num}
-                        selected={num === item.quantity}
+                        // defaultValue={item.quantity || 1}
+                        // selected={num === item.quantity}
                       >
                         {num}
                       </option>
                     ))}
                   </select>
                 </td>
-                <td className="p-4">${item.price * item.quantity}</td>
+                <td className="p-4">${item.price * (item?.quantity || 1)}</td>
               </tr>
             ))}
           </tbody>
@@ -96,7 +113,7 @@ export default function Cart() {
           <h3 className="text-lg font-semibold mb-4">Cart Total</h3>
           <div className="flex justify-between border-b pb-2 mb-2">
             <span>Subtotal:</span>
-            <span>$1750</span>
+            <span>${subTotal.toFixed(2)}</span>
           </div>
           <div className="flex justify-between border-b pb-2 mb-2">
             <span>Shipping:</span>
@@ -104,7 +121,7 @@ export default function Cart() {
           </div>
           <div className="flex justify-between font-semibold text-lg">
             <span>Total:</span>
-            <span>$1750</span>
+            <span>${subTotal.toFixed(2)}</span>
           </div>
           {/* <Button className="mt-4 pt-6 pb-6 pr-12 pl-12 w-full bg-[#DB4444] hover:bg-[#DB4444] text-white">
             Proceed to checkout
