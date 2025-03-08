@@ -11,7 +11,6 @@ export default function Header() {
     0
   );
 
-  console.log(cartCount);
   return (
     <header className="container mx-auto">
       <nav className="flex items-center justify-between pt-4 px-6">

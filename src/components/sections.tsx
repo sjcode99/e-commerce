@@ -10,41 +10,6 @@ import CustomButton from "./Button";
 import { ProductsType } from "@/types/productType";
 import useCartStore from "@/store/cartStore";
 
-// const products = [
-//   {
-//     name: "HAVIT HV-G92 Gamepad",
-//     price: "$120",
-//     oldPrice: "$160",
-//     discount: "-40%",
-//     rating: 4.5,
-//     image: "/images/gamepad.jpg",
-//   },
-//   {
-//     name: "AK-900 Wired Keyboard",
-//     price: "$960",
-//     oldPrice: "$1160",
-//     discount: "-35%",
-//     rating: 4.0,
-//     image: "/images/keyboard.jpg",
-//   },
-//   {
-//     name: "IPS LCD Gaming Monitor",
-//     price: "$370",
-//     oldPrice: "$400",
-//     discount: "-30%",
-//     rating: 4.8,
-//     image: "/images/monitor.jpg",
-//   },
-//   {
-//     name: "S-Series Comfort Chair",
-//     price: "$375",
-//     oldPrice: "$400",
-//     discount: "-25%",
-//     rating: 4.7,
-//     image: "/images/chair.jpg",
-//   },
-// ];
-
 export default function Sections({
   heading,
   subheading,
@@ -64,8 +29,6 @@ export default function Sections({
   const [hoverId, setHoverId] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { addToCart } = useCartStore();
-
-  // console.log(cart);
   const itemsPerPage = 4;
 
   useEffect(() => {
@@ -145,9 +108,6 @@ export default function Sections({
             </div>
           ) : (
             <div className="absolute right-2">
-              {/* <Button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">
-                View All
-              </Button> */}
               <CustomButton text="View All" bgColor={true} size="small" />
             </div>
           )}
@@ -155,42 +115,6 @@ export default function Sections({
       </div>
 
       {/* Product Cards */}
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {products
-          .slice(currentIndex, currentIndex + itemsPerPage)
-          .map((product, index) => (
-            <Card key={product.id} className="relative p-4 shadow-md">
-              {heading === "sale" && (
-                <span className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs rounded">
-                  {product.price}
-                </span>
-              )}
-              <img
-                src={product?.image}
-                alt={product?.title || "Product Image"}
-                className="w-full h-40 object-cover"
-              />
-              <div className="absolute top-2 right-2 space-y-2">
-                <Heart className="w-5 h-5 text-gray-500 cursor-pointer" />
-                <Eye className="w-5 h-5 text-gray-500 cursor-pointer" />
-              </div>
-              <h3 className="mt-2 font-semibold">{product?.title}</h3>
-              <div className="flex items-center space-x-2">
-                <span className="text-red-500 font-bold">
-                  <span>$</span>
-                  {product?.price}
-                </span>
-                <span className="text-gray-500 line-through">
-                  {product?.price}
-                </span>
-              </div>
-              <Button variant="default" className="mt-4 w-full">
-                Add To Cart
-              </Button>
-            </Card>
-          ))}
-      </div> */}
-
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {products
           .slice(currentIndex, currentIndex + itemsPerPage)
@@ -277,9 +201,6 @@ export default function Sections({
       {/* View All Button */}
       {(heading === "sale" || heading === "products") && (
         <div className="text-center mt-6">
-          {/* <Button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">
-            View All Products
-          </Button> */}
           <CustomButton text="View All Products" bgColor={true} size="small" />
         </div>
       )}
