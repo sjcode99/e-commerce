@@ -6,6 +6,7 @@ import useCartStore from "@/store/cartStore";
 import { ProductsType } from "@/types/productType";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Cart() {
   // const cartItems = [
@@ -126,7 +127,9 @@ export default function Cart() {
           {/* <Button className="mt-4 pt-6 pb-6 pr-12 pl-12 w-full bg-[#DB4444] hover:bg-[#DB4444] text-white">
             Proceed to checkout
           </Button> */}
-          <CustomButton text="Place Order" bgColor={true} size="" />
+          <Link href={"/checkout"}>
+            <CustomButton text="Proceed to checkout" bgColor={true} size="" />
+          </Link>
         </div>
       </div>
     </div>
