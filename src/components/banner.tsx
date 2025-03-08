@@ -1,4 +1,3 @@
-
 "use client";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
@@ -35,7 +34,7 @@ export default function Banner() {
   }, []);
 
   return (
-    <section className="relative bg-black text-white p-12 rounded-lg flex items-center mb-8">
+    <section className="relative bg-black text-white px-12 py-6 rounded-lg flex items-center mb-8 justify-between">
       {/* Left Section: Text & Timer */}
       <div className="w-1/2">
         <span className="text-green-500 font-semibold">Categories</span>
@@ -43,22 +42,10 @@ export default function Banner() {
           Enhance Your Music Experience
         </h2>
         <div className="flex space-x-4 mt-6">
-          <div className="flex flex-col items-center bg-white text-black px-4 py-2 rounded-lg">
-            <span className="text-xl font-bold">{timeLeft.hours}</span>
-            <span className="text-sm">Hours</span>
-          </div>
-          <div className="flex flex-col items-center bg-white text-black px-4 py-2 rounded-lg">
-            <span className="text-xl font-bold">{timeLeft.days}</span>
-            <span className="text-sm">Days</span>
-          </div>
-          <div className="flex flex-col items-center bg-white text-black px-4 py-2 rounded-lg">
-            <span className="text-xl font-bold">{timeLeft.minutes}</span>
-            <span className="text-sm">Minutes</span>
-          </div>
-          <div className="flex flex-col items-center bg-white text-black px-4 py-2 rounded-lg">
-            <span className="text-xl font-bold">{timeLeft.seconds}</span>
-            <span className="text-sm">Seconds</span>
-          </div>
+          <TimerClock time={timeLeft.hours} text={"Hours"} />
+          <TimerClock time={timeLeft.days} text={"Days"} />
+          <TimerClock time={timeLeft.minutes} text={"Minutes"} />
+          <TimerClock time={timeLeft.seconds} text={"Seconds"} />
         </div>
         <Button className="mt-6 bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
           Buy Now!
@@ -66,13 +53,22 @@ export default function Banner() {
       </div>
 
       {/* Right Section: Image */}
-      <div className="w-1/2 flex justify-end">
+      <div className="flex justify-end">
         <img
           src="/images/jbl-speaker.png"
           alt="JBL Speaker"
-          className="w-3/4 object-contain"
+          className="w-full object-contain"
         />
       </div>
     </section>
+  );
+}
+
+function TimerClock({ time, text }: { time: number; text: string }) {
+  return (
+    <div className="flex flex-col items-center bg-white text-black px-4 py-2 rounded-[50%]">
+      <span className="text-xl font-bold">{time}</span>
+      <span className="text-sm">{text}</span>
+    </div>
   );
 }
