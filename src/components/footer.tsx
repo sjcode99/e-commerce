@@ -71,7 +71,7 @@ export default function Footer() {
             <img
               src="/images/qr-code.png"
               alt="QR Code"
-              className="w-14 h-14"
+              className="w-16 h-16"
             />
             <div className="space-y-2">
               <img
