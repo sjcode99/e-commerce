@@ -10,7 +10,7 @@ import useProductStore from "@/store/productStore";
 import { useEffect } from "react";
 
 export default function Home() {
-  const { products, fetchProducts, shuffledProducts } = useProductStore();
+  const { products, fetchProducts } = useProductStore();
 
   useEffect(() => {
     fetchProducts();
@@ -33,7 +33,7 @@ export default function Home() {
 
       <Sections heading="products" subheading="products" products={products} />
 
-      <Promotions shuffledProducts={shuffledProducts} />
+      <Promotions />
 
       <ServiceFeatures />
     </main>
