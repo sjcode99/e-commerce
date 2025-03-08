@@ -16,20 +16,20 @@ export default function About() {
     <div className="container mx-auto px-4 py-12">
       <nav className="text-gray-500 mb-4">
         <span className="text-sm">
-          Home / <span className="font-medium">About</span>
+          Home / <span className="font-semibold text-black">About</span>
         </span>
       </nav>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">Our Story</h1>
-          <p className="text-gray-600 mb-4 text-sm sm:text-base">
+          <p className="text-black mb-4 text-sm sm:text-base">
             Launched in 2015, Exclusive is South Asia’s premier online shopping
             marketplace with an active presence in Bangladesh. Supported by a
             wide range of tailored marketing, data, and service solutions,
             Exclusive has 10,500 sellers and 300 brands and serves 3 million
             customers across the region.
           </p>
-          <p className="text-gray-600 text-sm sm:text-base">
+          <p className="text-black text-sm sm:text-base">
             Exclusive has more than 1 Million products to offer, growing very
             fast. Exclusive offers a diverse assortment in categories ranging
             from consumer.
@@ -37,7 +37,7 @@ export default function About() {
         </div>
         <div className="flex justify-center">
           <Image
-            src="/about-image.jpg"
+            src="/images/about-image.png"
             alt="Shopping women"
             width={600}
             height={400}
@@ -65,7 +65,7 @@ function StatisticSection() {
       <div className="flex flex-col items-center border rounded-lg p-6 shadow-sm">
         <Store className="text-black bg-gray-200 rounded-full p-2 w-12 h-12" />
         <h2 className="text-xl font-bold mt-2">10.5k</h2>
-        <p className="text-gray-600 text-sm">Sellers active on our site</p>
+        <p className="text-black text-sm">Sellers active on our site</p>
       </div>
       <div className="flex flex-col items-center border rounded-lg p-6 shadow-sm bg-[#DB4444] text-white">
         <DollarSign className="bg-white text-black rounded-full p-2 w-12 h-12" />
@@ -75,12 +75,12 @@ function StatisticSection() {
       <div className="flex flex-col items-center border rounded-lg p-6 shadow-sm">
         <ShoppingBag className="text-black bg-gray-200 rounded-full p-2 w-12 h-12" />
         <h2 className="text-xl font-bold mt-2">45.5k</h2>
-        <p className="text-gray-600 text-sm">Customers active on our site</p>
+        <p className="text-black text-sm">Customers active on our site</p>
       </div>
       <div className="flex flex-col items-center border rounded-lg p-6 shadow-sm">
         <PiggyBank className="text-black bg-gray-200 rounded-full p-2 w-12 h-12" />
         <h2 className="text-xl font-bold mt-2">25k</h2>
-        <p className="text-gray-600 text-sm">Annual gross sale on our site</p>
+        <p className="text-black text-sm">Annual gross sale on our site</p>
       </div>
     </div>
   );

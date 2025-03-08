@@ -29,7 +29,7 @@ export default function ServiceFeatures() {
             {service.icon}
           </div>
           <h3 className="mt-4 text-lg font-bold">{service.title}</h3>
-          <p className="text-gray-600 text-sm">{service.description}</p>
+          <p className="text-black text-sm">{service.description}</p>
         </div>
       ))}
     </section>

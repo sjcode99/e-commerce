@@ -49,7 +49,7 @@ export default function TeamSection() {
                 />
                 <div className="flex flex-col items-start">
                   <h3 className="text-lg font-bold mt-4">{member.name}</h3>
-                  <p className="text-gray-500 text-sm">{member.role}</p>
+                  <p className="text-black text-sm">{member.role}</p>
                   <div className="flex space-x-3 mt-2 text-gray-600">
                     <Twitter className="w-5 h-5 cursor-pointer" />
                     <Instagram className="w-5 h-5 cursor-pointer" />
