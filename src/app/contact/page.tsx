@@ -10,7 +10,7 @@ export default function Contact() {
     <div className="container mx-auto px-4 py-12">
       <nav className="text-gray-500 mb-4">
         <span className="text-sm">
-          Home / <span className="font-medium">Contact</span>
+          Home / <span className="font-semibold text-black">Contact</span>
         </span>
       </nav>
 
@@ -54,20 +54,20 @@ export default function Contact() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
             <Input
               placeholder="Your Name *"
-              className="p-5 bg-[#F5F5F5] rounded-sm"
+              className="p-5 bg-[#F5F5F5] rounded-sm border-none"
             />
             <Input
               placeholder="Your Email *"
-              className="p-5 bg-[#F5F5F5] rounded-sm"
+              className="p-5 bg-[#F5F5F5] rounded-sm border-none"
             />
             <Input
               placeholder="Your Phone *"
-              className="p-5 bg-[#F5F5F5] rounded-sm"
+              className="p-5 bg-[#F5F5F5] rounded-sm border-none"
             />
           </div>
           <Textarea
             placeholder="Your Message"
-            className="p-5 bg-[#F5F5F5] rounded-sm h-36"
+            className="p-5 bg-[#F5F5F5] rounded-sm h-36 border-none"
           />
           {/* <Button className="mt-4 bg-[#DB4444] hover:[#DB4444] w-full sm:w-auto pt-6 pb-6 pr-12 pl-12">
             Send Message

@@ -36,11 +36,9 @@ export default function CategorySection() {
           {/* Navigation Arrows */}
           <div className="flex absolute right-2 mt-6 gap-2">
             <Button variant="outline" className="rounded-full p-2">
-              {/* <ChevronLeft className="w-5 h-5" /> */}
               <ArrowLeft size={28} className="w-5 h-5" />
             </Button>
             <Button variant="outline" className="rounded-full p-2">
-              {/* <ChevronRight className="w-5 h-5" /> */}
               <ArrowRight size={28} className="w-5 h-5" />
             </Button>
           </div>
@@ -55,7 +53,7 @@ export default function CategorySection() {
               key={index}
               className={`flex flex-col items-center justify-center p-4 border cursor-pointer rounded-lg w-[170px] h-[145px] ${
                 activeCategory === category.name
-                  ? "bg-red-500 text-white"
+                  ? "bg-[#DB4444] hover:bg-[#DB4444] text-white"
                   : "hover:bg-gray-100"
               }`}
               onClick={() => setActiveCategory(category.name)}

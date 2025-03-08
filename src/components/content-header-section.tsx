@@ -23,10 +23,13 @@ export default function Section() {
           {categories.map((category, index) => (
             <li
               key={index}
-              className="flex justify-between items-center cursor-pointer hover:text-blue-500"
+              className="flex justify-between items-center cursor-pointer"
             >
-              {category} 
-              {(category === "Woman’s Fashion" || category === "Men’s Fashion") && <ChevronRight className="w-4 h-4" />}
+              {category}
+              {(category === "Woman’s Fashion" ||
+                category === "Men’s Fashion") && (
+                <ChevronRight className="w-4 h-4" />
+              )}
             </li>
           ))}
         </ul>
@@ -37,19 +40,30 @@ export default function Section() {
         <Carousel>
           <CarouselContent>
             <CarouselItem>
-              <div className="relative bg-black text-white p-8 rounded-md overflow-hidden">
-                <h2 className="text-3xl font-bold">iPhone 14 Series</h2>
-                <p className="text-lg">Up to 10% off Voucher</p>
-                <Button
-                  variant="outline"
-                  className="mt-4 text-white border-white"
-                >
-                  Shop Now →
-                </Button>
+              <div className="relative bg-black text-white p-8 rounded-md overflow-hidden h-[20rem]">
+                <div className="w-1/3 pl-4">
+                  <h2 className="text-sm font-normal mb-3">iPhone 14 Series</h2>
+                  <p className="text-6xl leading-[4.5rem] ">
+                    Up to 10% off Voucher
+                  </p>
+                  <Button
+                    variant="link"
+                    className="text-white underline text-sm font-normal mt-2"
+                  >
+                    Shop Now →
+                  </Button>
+                  {/* <Button
+                    variant="outline"
+                    className="mt-4 text-black border-white "
+                  >
+                    Shop Now →
+                  </Button> */}
+                </div>
+
                 <img
-                  src="/images/iphone-banner.jpg"
+                  src="/images/iphone-banner.png"
                   alt="iPhone 14"
-                  className="absolute right-0 bottom-0 w-1/2"
+                  className="absolute right-0 bottom-0 w-1/2 object-contain h-full"
                 />
               </div>
             </CarouselItem>

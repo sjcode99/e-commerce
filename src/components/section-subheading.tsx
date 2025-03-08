@@ -12,7 +12,7 @@ export default function SectionSubHeading({
   subheading: string;
 }) {
   return (
-    <span className="text-red-500 font-semibold capitalize">
+    <span className="text-[#DB4444] font-semibold capitalize">
       {nameObj[subheading]}
     </span>
   );
