@@ -5,6 +5,7 @@ interface CartStore {
   cart: ProductsType[];
   addToCart: (product: ProductsType) => void;
   updateQuantity: (id: number, quantity: number) => void;
+  removeFromCart: (id: number) => void;
 }
 const useCartStore = create<CartStore>((set) => ({
   cart: [],

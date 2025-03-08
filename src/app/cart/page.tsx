@@ -9,29 +9,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Cart() {
-  // const cartItems = [
-  //   {
-  //     id: 1,
-  //     name: "LCD Monitor",
-  //     price: 650,
-  //     quantity: 1,
-  //     image: "/monitor.png",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "H1 Gamepad",
-  //     price: 550,
-  //     quantity: 2,
-  //     image: "/gamepad.png",
-  //   },
-  // ];
-  const { cart, updateQuantity } = useCartStore();
+  const { cart, updateQuantity, removeFromCart } = useCartStore();
 
   // calculate subtotal
   const subTotal = cart.reduce((acc, item) => acc + (item.price* (item?.quantity || 1)), 0);
-
-  console.log(cart);
-
   return (
     <div className="container mx-auto px-4 py-12">
       <nav className="text-gray-500 mb-4">
@@ -55,7 +36,7 @@ export default function Cart() {
             {cart.map((item: ProductsType) => (
               <tr key={item.id} className="border-t">
                 <td className="p-4 flex items-center space-x-3">
-                  <Button variant="ghost" size="icon" className="text-red-500">
+                  <Button variant="ghost" size="icon" className="text-red-500" onClick={() =>removeFromCart(item.id)}>
                     <Trash2 size={16} />
                   </Button>
                   {/* <Image
@@ -97,7 +78,7 @@ export default function Cart() {
 
       {/* Buttons & Coupon Section */}
       <div className="flex flex-col md:flex-row justify-between items-center mt-6 gap-4">
-        <CustomButton text={"Return To Shop"} bgColor={false} size="small" />
+        <Link href={"/"}><CustomButton text={"Return To Shop"} bgColor={false} size="small" /></Link>
         <CustomButton text={"Update Cart"} bgColor={false} size="small" />
       </div>
 
