@@ -16,9 +16,8 @@ export default function Home() {
     fetchProducts();
   }, []);
 
-  console.log(products);
   return (
-    <main className="container mx-auto flex min-h-screen flex-col">
+    <main className="!container !mx-auto flex min-h-screen flex-col">
       <ContentHeadSection />
 
       <Sections heading="sale" subheading="today" products={products} />
